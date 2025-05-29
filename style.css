@@ -1,5 +1,4 @@
 body {
-  margin: 0;
   font-family: Arial, sans-serif;
   background: #fff;
 }
@@ -93,8 +92,7 @@ button{
   font-size: 14px;
 }
 
-.shortcut {
-  margin-left: 8px;
+.sKey {
   padding: 2px 6px;
   background: #e5e7eb;
   border-radius: 4px;
@@ -132,18 +130,6 @@ button{
   padding: 20px 40px;
   padding-left: 30%;
 }
-
-/* .footer {
-  position: sticky;
-  background-color: #f9f9f9;
-  padding: 12px 20px;
-  border-top: 1px solid #ccc;
-  font-family: sans-serif;
-  font-size: 14px;
-  display: flex;
-  align-items: center;
-} */
-
 .breadcrumb {
   display: flex;
   align-items: center;

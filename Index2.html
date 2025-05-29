@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+    * {
+      box-sizing: border-box;
+    }
+h1{
+    padding-top: 5%;
+    
+}
+.header{
+
+    border-bottom: 1px solid black;
+    display: flex;
+    padding: 10px 30px;
+    justify-content: space-between;
+}
+button{
+    background-color: green;
+    color: white;
+    border:none;
+    padding: 10px;
+    width: 60px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.left-section a{
+    align-items: center;
+    font-family: sans-serif;
+    color: #374151;;
+    display: inline-flex;
+    text-decoration: none;
+    margin:0px 8px;
+}
+.left-section{
+display: flex;
+align-items: center;
+gap:15px;
+}
+.right-section {
+    display: flex;
+    font-family: sans-serif;
+    color: black;
+    align-items: center;
+    /* gap: 25px; */
+}
+.search{
+    border: 1px solid #d1d5db;
+    border-radius: 300px;
+    align-items: center;
+    display: flex;
+    padding: 10px 10px;
+}
+.search input{
+    border: none;
+    background: transparent;
+    font-size: 14px;
+}
+.search .search-icon{
+margin: 6px;
+color: #a9abaf;
+}
+.sKey{
+    margin-left: 8px;
+    padding:2px 8px;
+    font-size: 14px;
+  font-family: monospace;
+  background: #a9abaf;
+  border-radius: 4px;
+}
+.icons span i{
+    padding: 5px;
+    padding-bottom:10px ;
+}
+.icons img{
+    padding: 5px;
+}
+/*Media Queries*/
+@media screen and (max-width:768px){
+    .header{
+        flex-direction: column;
+        /* align-items: flex-start; */
+        padding:15px;
+        border-bottom: 1px solid black;
+        border-width: 100%;
+    }
+    .left-section{
+        justify-content: flex-start;
+        gap:10px;
+    }
+    
+    .right-section{
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 10px;
+    }
+    .search{
+        width: 100%;
+        padding:8px 12px;
+    }
+    .search input{
+        width: 80%;
+    }
+    .icons{
+        margin-top: 10px;
+    }
+    button {
+        width: auto;
+        padding: 8px 12px;
+      }
+
+      .left-section a {
+        font-size: 12px;
+      }
+      .sKey{
+        width: auto;
+        font-size: 12px;
+      }
+    .content{
+        font-size: 13px;
+    }
+}
+@media screen and (max-width:480px){
+
+}
+    </style>
+</head>
+<body>
+    <div class="header">
+    <div class="left-section">
+        <img src="/image/logo.PNG">
+        <button>learn</button>
+        <a href="#">About</a>
+     <a href="#">Download</a> 
+     <a href="#">Blog</a>
+      <a href="#">Docs</a>
+      <a href="#">Contribute</a>
+      <a href="#">Cetification</a>
+    </div>
+    <div class="right-section">
+        <div class="search"><span><i class="fa fa-search search-icon" aria-hidden="true"></i></span>
+<input type="text" placeholder="..start typing"/>
+<kbd class="sKey">ctrl + k</kbd>
+</div><div class="icons">
+      <span><i class="fa fa-moon-o" style="font-size:18px"></i></span>
+    <span><i class="fa fa-language" aria-hidden="true"></i></span>
+<img src="/image/githubLogo.PNG"></div>
+    </div>
+</div>
+<div class="content">
+    <h1>How much JavaScript do you need to know to use Node.js?</h1>
+    
+</div>
+</body>
+</html>
