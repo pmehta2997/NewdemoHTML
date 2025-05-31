@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<head><meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
+<html lang="en">
 
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <style>
     * {
       box-sizing: border-box;
     }
@@ -25,19 +27,14 @@
       display: none;
       font-size: 24px;
     }
-    .close{
-         display: none;
+
+    .close {
+      display: none;
       font-size: 24px;
     }
+
     .logo {
       width: 120px;
-    }
-    .left-section {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      flex-wrap: wrap;
-      margin-left:-450px;
     }
 
     .right-section {
@@ -46,6 +43,16 @@
       gap: 15px;
       flex-wrap: wrap;
     }
+
+    .left-section {
+      padding: 5px;
+      display: inline-flex;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+
+    }
+
     .left-section a {
       text-decoration: none;
       color: black;
@@ -59,6 +66,14 @@
       padding: 10px;
       border-radius: 5px;
     }
+
+    .overlay {
+      display: inline-flex;
+      justify-content: space-between;
+      flex: 1;
+    }
+
+
 
     button {
       background-color: green;
@@ -91,75 +106,83 @@
       border-radius: 4px;
     }
 
-    .icons span i{
-        padding: 5px;
+    .icons span i {
+      padding: 5px;
     }
+
     .icons img {
       padding: 5px;
     }
-.demo ul a{
-    color:green;
-    text-decoration: none;
-    font-size: large;
-    font-family: Arial, Helvetica, sans-serif;
-}
-.demo{
-    padding-left: 30%;
-    padding-right: 20%;
-    padding-top: 5%;
-    padding-bottom: 10%;
-}
-.demo p{
-    font-size: large;
-    font-family: Arial, Helvetica, sans-serif;
-}
-.demo h1{
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 200;
-}
-.demo h2{
-    font-family: Arial, Helvetica, sans-serif;
-}
+
+    .demo ul a {
+      color: green;
+      text-decoration: none;
+      font-size: large;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .demo {
+      padding-left: 30%;
+      padding-right: 20%;
+      padding-top: 5%;
+      padding-bottom: 10%;
+    }
+
+    .demo p {
+      font-size: large;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .demo h1 {
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 200;
+    }
+
+    .demo h2 {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .left-menu {
+      display: inline-flex;
+      padding: 5px;
+      justify-content: space-between;
+    }
+
     /* Responsive Styles */
     @media (max-width: 768px) {
-        .header {
-       
-        align-items: flex-start;
-      }
       .hamburger {
         display: block;
         align-self: flex-end;
       }
-  .close {
-    display: none;
-    align-self: flex-end;
-  }
-      .left-section{
+
+      .close {
         display: none;
-        align-items: flex-start;
-        width: 100%;
-        margin-top: 10px;
-        flex-direction: column;
-    padding: 5px;
-    margin-left: 0px;
-      } 
-      .right-section {
-       display: none;
+        align-self: flex-end;
       }
-.left-section.show{
-    display: flex;
-    
-}
-.right-section.show{
-    display: flex;
-}
-  .left-section.hide{
-    display: none;
-    
-}
-.right-section.hide{
-    display: none;
-}
+
+      .left-section,
+      .right-section {
+        flex-direction: column;
+        width: 100%;
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+        transition: max-height 0.4s ease, opacity 0.3s ease;
+        align-items: flex-start;
+      }
+
+      .left-section.show,
+      .right-section.show {
+        max-height: 500px;
+        opacity: 1;
+      }
+
+      .left-section.hide,
+      .right-section.hide {
+        max-height: 0;
+        opacity: 0;
+      }
+
       .search {
         width: 100%;
       }
@@ -171,29 +194,81 @@
       .logo {
         width: 100px;
       }
-    }
-  
 
-@media (max-width:480px){
-    /* .left-section a:nth-child(n+4) {
-        display: none; /* Hide extra nav links on small screens *
-      } */
-
- /* .header{
+      .left-menu {
+        display: inline-flex;
         flex-direction: column;
-        /* align-items: flex-start; *
-        padding:15px;
-        border-bottom: 1px solid black;
-        width: 100%;
-        justify-content: flex-start;
-    } */
+      }
 
-    .demo{
-    padding-left: 30%;
-    padding-right: 20%;
-    padding-top: 5%;
-    padding-bottom: 10%;
-}
+      .overlay {
+        height: 0%;
+        width: 100%;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: rgb(148, 145, 145);
+        background-color: rgba(160, 156, 156, 0.9);
+        overflow-y: hidden;
+        transition: 0.5s;
+      }
+
+      .overlay-content {
+        position: relative;
+        width: 100%;
+        text-align: center;
+      }
+
+      .overlay a {
+        padding: 8px;
+        text-decoration: none;
+        font-size: 36px;
+        color: #0c0c0c;
+        display: block;
+        transition: 0.3s;
+
+      }
+
+      .overlay a:hover,
+      .overlay a:focus {
+        color: #f1f1f1;
+      }
+
+      .overlay .closebtn {
+        position: absolute;
+        top: 20px;
+        right: 45px;
+        font-size: 60px;
+        align-items: flex-end;
+      }
+
+    }
+
+    @media (max-width: 480px) {
+      .demo {
+        padding-left: 30%;
+        padding-right: 20%;
+        padding-top: 5%;
+        padding-bottom: 10%;
+      }
+
+      .overlay {
+        overflow-y: auto;
+        flex-direction: column;
+      }
+
+      .overlay a {
+        font-size: 16px;
+        color: black;
+      }
+
+      .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+        align-items: flex-end;
+      }
+
       .sKey {
         display: none;
       }
@@ -205,79 +280,86 @@
       .icons img {
         width: 20px;
       }
-}
-    </style>
+    }
+  </style>
 </head>
+
 <body>
-<div class="header">
+  <div class="header">
+
     <img src="/image/logo.PNG" class="logo" alt="Logo" />
-     <span class="hamburger" onclick="toggleMenu()" id="hidetoggle">&#9776;</span>
-     <span class="close" onclick="toggleMenuClose()">x</span>
-    <div class="left-section" id="leftSection">
-      <button>Learn</button>
-      <a href="#">About</a>
-      <a href="#">Download</a>
-      <a href="#">Blog</a>
-      <a href="#">Docs</a>
-      <a href="#">Contribute</a>
-      <a href="#">Certification</a>
-    </div>
+    <span class="hamburger" onclick="toggleMenu()" id="openToggle">&#9776;</span>
+    <div id="myNav" class="overlay">
+      <span class="close" onclick="toggleMenuClose()" id="closeToggle">×</span>
 
-    <div class="right-section" id="rightSection">
-      <div class="search">
-        <span><i class="fa fa-search search-icon" aria-hidden="true"></i></span>
-        <input type="text" placeholder="..start typing"  id="searchbar" 
-               onkeyup="search_topic()"/>
-        <kbd class="sKey">ctrl + k</kbd>
+      <div class="left-section overlay-content" id="leftSection">
+        <button>Learn</button>
+        <a href="#">About</a>
+        <a href="#">Download</a>
+        <a href="#">Blog</a>
+        <a href="#">Docs</a>
+        <a href="#">Contribute</a>
+        <a href="#">Certification</a>
       </div>
-      <div class="icons">
-        <span><i class="fa fa-moon-o" style="font-size:18px"></i></span>
-        <span><i class="fa fa-language" aria-hidden="true"></i></span>
-        <img src="/image/githubLogo.PNG" alt="GitHub" />
+
+
+      <div class="right-section overlay-content" id="rightSection">
+        <div class="search">
+          <span><i class="fa fa-search search-icon" aria-hidden="true"></i></span>
+          <input type="text" placeholder="..start typing" id="searchbar" onkeyup="search_topic()" />
+          <kbd class="sKey">ctrl + k</kbd>
+        </div>
+        <div class="icons">
+          <span><i class="fa fa-moon-o" style="font-size:18px"></i></span>
+          <span><i class="fa fa-language" aria-hidden="true"></i></span>
+          <img src="/image/githubLogo.PNG" alt="GitHub" />
+        </div>
       </div>
     </div>
-</div>
-
-<div class="demo">
+  </div>
+  <div class="demo">
     <div>
-        <h1>How much JavaScript do you need to know to use Node.js?</h1>
-        <p>
-            As a beginner, it's hard to get to a point where you are confident enough in your programming abilities. While learning to code, you might also be confused at where does JavaScript end, and where Node.js begins, and vice versa.
-        </p>
+      <h1>How much JavaScript do you need to know to use Node.js?</h1>
+      <p>
+        As a beginner, it's hard to get to a point where you are confident enough in your programming abilities. While
+        learning to code, you might also be confused at where does JavaScript end, and where Node.js begins, and vice
+        versa.
+      </p>
     </div>
-    <div><h1>What is recommended to learn before diving deep with Node.js?</h1>
-    <div >
-        <ul class="list">
-            <li class="topics"><a href="https://www.geeksforgeeks.org/what-is-an-event-loop-in-javascript/">Lexical Structure</a></li>
-            <li class="topics"><a href="#">Expressions</a></li>
-            <li class="topics"><a href="#">Data Types</a></li>
-            <li class="topics"><a href="#">Classes</a></li>
-            <li class="topics"><a href="#">Variables</a></li>
-            <li class="topics"><a href="#">Functions</a></li>
-            <li class="topics"><img src="\image\this.png"><a href="#">Operator</a></li>
-            <li class="topics"><a href="#">Arrow Functions</a></li>
-            <li class="topics"><a href="#">Loops</a></li>
-            <li class="topics"><a href="#">Scopes</a></li>
-            <li class="topics"><a href="#">Arrays</a></li>
-            <li class="topics"><a href="#">Template Literals</a></li>
-            <li class="topics"><a href="#">Strict Mode</a></li>
-            <li class="topics"><a href="#">ECMAScript 2015 (ES6) and beyond</a></li>
-            <li class="topics"><a href="#">Asynchronous JavaScript</a></li>
-        </ul>
-    </div><p>With those concepts in mind, you are well on your road to become a proficient JavaScript developer, in both the browser and in Node.js.</p>
+    <div>
+      <h1>What is recommended to learn before diving deep with Node.js?</h1>
+      <ul class="list">
+        <li class="topics"><a href="#">Lexical Structure</a></li>
+        <li class="topics"><a href="#">Expressions</a></li>
+        <li class="topics"><a href="#">Data Types</a></li>
+        <li class="topics"><a href="#">Classes</a></li>
+        <li class="topics"><a href="#">Variables</a></li>
+        <li class="topics"><a href="#">Functions</a></li>
+        <li class="topics"><a href="#"><img src="/image/this.png">Operator</a></li>
+        <li class="topics"><a href="#">Arrow Functions</a></li>
+        <li class="topics"><a href="#">Loops</a></li>
+        <li class="topics"><a href="#">Scopes</a></li>
+        <li class="topics"><a href="#">Arrays</a></li>
+        <li class="topics"><a href="#">Template Literals</a></li>
+        <li class="topics"><a href="#">Strict Mode</a></li>
+        <li class="topics"><a href="#">ES6 and beyond</a></li>
+        <li class="topics"><a href="#">Asynchronous JavaScript</a></li>
+      </ul>
+      <p>With those concepts in mind, you are well on your road to becoming a proficient JavaScript developer.</p>
     </div>
-    <div><h2>Asynchronous Programming</h2>
-        <p>The following concepts are also key to understand asynchronous programming, which is one of the fundamental parts of Node.js:</p>
-    <ul>
-        <li><a href="#">Asynchronous programming and callbacks</a></li>
+
+    <div>
+      <h2>Asynchronous Programming</h2>
+      <p>The following concepts are also key to understand asynchronous programming:</p>
+      <ul>
         <li><a href="#">Asynchronous programming and callbacks</a></li>
         <li><a href="#">Promises</a></li>
         <li><a href="#">Async and Await</a></li>
         <li><a href="#">Closure</a></li>
         <li><a href="#">The Event Loop</a></li>
-    </ul>    
+      </ul>
     </div>
-    </div>
+  </div>
 
   <script>
     function toggleMenu() {
@@ -285,35 +367,45 @@
       document.getElementById("rightSection").classList.add("show");
       document.getElementById("leftSection").classList.remove("hide");
       document.getElementById("rightSection").classList.remove("hide");
-     
-        // Show close button, hide hamburger
-  document.getElementById("hidetoggle").style.display = "none";
-  document.querySelector(".close").style.display = "block";
+      document.getElementById("openToggle").style.display = "none";
+      document.getElementById("closeToggle").style.display = "block";
+
+      document.getElementById("myNav").style.height = "80%";
     }
-    function toggleMenuClose(){
-        document.getElementById("leftSection").classList.remove("show");
+
+    function toggleMenuClose() {
+      document.getElementById("leftSection").classList.remove("show");
       document.getElementById("rightSection").classList.remove("show");
-        document.getElementById("leftSection").classList.add("hide");
+      document.getElementById("leftSection").classList.add("hide");
       document.getElementById("rightSection").classList.add("hide");
-
-      // Show hamburger again, hide close button
-  document.getElementById("hidetoggle").style.display = "block";
-  document.querySelector(".close").style.display = "none";
+      document.getElementById("openToggle").style.display = "block";
+      document.getElementById("closeToggle").style.display = "none";
+      document.getElementById("myNav").style.height = "0%";
     }
+    const toggleBtn = document.getElementById("openToggle");
 
-    function search_topic(){
-        let input = document.getElementById('searchbar').value
-        input = input.toLowerCase();
-        let x = document.getElementsByClassName('topics');
-        for(i=0; i<x.length; i++){
-            if(!x[i].innerHTML.toLowerCase().includes(input)){
-                x[i].style.display = "none";
-            }else{
-                 x[i].style.display = "list-item";
-            }
+    // Hide mobile menu if screen is resized to desktop
+    window.addEventListener("resize", () => {
+      if (window.innerWidth >= 1024) { // 1024px or more = desktop
+        toggleBtn.classList.add("hidden");
+        toggleBtn.style.display = ("none");
+      }
+      else {
+        toggleBtn.style.display = ("block");
+      }
+    });
+    function search_topic() {
+      let input = document.getElementById('searchbar').value.toLowerCase();
+      let items = document.getElementsByClassName('topics');
+      for (let i = 0; i < items.length; i++) {
+        if (!items[i].innerHTML.toLowerCase().includes(input)) {
+          items[i].style.display = "none";
+        } else {
+          items[i].style.display = "list-item";
         }
+      }
     }
-
   </script>
 </body>
+
 </html>

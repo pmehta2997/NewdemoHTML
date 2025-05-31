@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 30px;
+      border-bottom: 1px solid black;
+      background-color: white;
+      flex-wrap: nowrap;
+    }
+
+    .logo {
+      width: 100px;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .nav button {
+      background-color: green;
+      color: white;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: black;
+      font-size: 14px;
+    }
+
+    .right-section {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .search {
+      display: flex;
+      align-items: center;
+      border: 1px solid #d1d5db;
+      border-radius: 300px;
+      padding: 6px 10px;
+    }
+
+    .search input {
+      border: none;
+      background: transparent;
+      font-size: 14px;
+      outline: none;
+    }
+
+    .sKey {
+      margin-left: 8px;
+      padding: 2px 8px;
+      font-size: 12px;
+      font-family: monospace;
+      background: #a9abaf;
+      border-radius: 4px;
+    }
+
+    .icons i,
+    .icons img {
+      padding: 5px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .header {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .nav,
+      .right-section {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        gap: 10px;
+      }
+
+      .search {
+        width: 100%;
+      }
+
+      .search input {
+        width: 100%;
+      }
+
+      .sKey {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <img src="/image/logo.PNG" class="logo" alt="Logo" />
+
+    <div class="nav">
+      <button>Learn</button>
+      <a href="#">About</a>
+      <a href="#">Download</a>
+      <a href="#">Blog</a>
+      <a href="#">Docs</a>
+      <a href="#">Contribute</a>
+      <a href="#">Certification</a>
+    </div>
+
+    <div class="right-section">
+      <div class="search">
+        <i class="fa fa-search"></i>
+        <input type="text" placeholder="..start typing" onkeyup="search_topic()" />
+        <kbd class="sKey">ctrl + k</kbd>
+      </div>
+      <div class="icons">
+        <i class="fa fa-moon-o"></i>
+        <i class="fa fa-language"></i>
+        <img src="/image/githubLogo.PNG" alt="GitHub" style="height: 20px;" />
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function search_topic() {
+      let input = document.querySelector('.search input').value.toLowerCase();
+      let items = document.getElementsByClassName('topics');
+      for (let i = 0; i < items.length; i++) {
+        if (!items[i].innerHTML.toLowerCase().includes(input)) {
+          items[i].style.display = "none";
+        } else {
+          items[i].style.display = "list-item";
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>
